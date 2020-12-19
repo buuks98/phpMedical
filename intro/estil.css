@@ -38,6 +38,7 @@ input[type="submit"]{
 	color: #fff;
 	padding: 5px;
 	margin-top: 20px;
+	cursor: pointer;
 }
 
 .entrar {

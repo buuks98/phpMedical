@@ -101,16 +101,17 @@ a:active {
 
 .botright {
 	background-color: #166c8e;
-	border-radius: 0 0 10px 0;
-	border: 0;
-	bottom: 0px;
+	border-radius: 10px 10px 10px 10px;
 	color: #fff;
-	margin-top: 20px;
 	outline: none;
-	padding: 10px;
-	position: absolute;
-	right: 0px;
+	padding: 15px;
 	cursor:pointer;
+}
+
+.center {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
 }
 
 .error {

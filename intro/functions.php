@@ -17,7 +17,7 @@ function check_login(){
 }
 
 function connect(){
-    return oci_connect($_SESSION["username"], $_SESSION["password"], 'oracleps');
+    return oci_connect($_SESSION["username"], $_SESSION["password"], 'ORCLCDB');
 }
 
 ?>
