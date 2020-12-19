@@ -1,0 +1,132 @@
+
+.contenidor:before {
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: -1;
+
+	display: block;
+	background-image: url('./background.jpg');
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.contenidor {
+	overflow: auto;
+	position: relative;
+}
+
+.contingut{
+	margin: 5% auto auto auto;
+	background-color: #fff;
+	width: 40%;
+	position: relative;
+	border-radius: 0 0 10px 10px;
+}
+
+.titol {
+	background-color: #166c8e;
+	text-align: center;
+	font: 15px/1.5 Helvetica, Verdana, sans-serif;
+	color: #eee;
+}
+
+.opcions {
+	padding-bottom: 10px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+a {
+	text-decoration: none;
+	font: bold 15px/1.5 Helvetica, Verdana, sans-serif;
+	padding-left: 10px;
+}
+
+li p {
+	font: 200 12px/1.5 Georgia, Times New Roman, serif;
+	padding-left: 15px;
+}
+
+li a {
+	margin: 0px;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+li {
+	padding: 10px;
+	overflow: auto;
+}
+
+li:hover {
+	background: #eee;
+	cursor: pointer;
+}
+
+.topleft {
+	position: absolute;
+	line-height: 45px;
+	padding-right: 10px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+a:link {
+	color: #166c8e;
+}
+a:visited {
+	color: #166c8e;
+}
+a:hover {
+	color: #166c8e;
+}
+a:active {
+	color: #166c8e;
+}
+
+.espai-dades {
+	margin: 10px;
+}
+
+.espai-dades label {
+	display: inline-block;
+	width: 170px;
+}
+
+.botright {
+	background-color: #166c8e;
+	border-radius: 0 0 10px 0;
+	border: 0;
+	bottom: 0px;
+	color: #fff;
+	margin-top: 20px;
+	outline: none;
+	padding: 10px;
+	position: absolute;
+	right: 0px;
+	cursor:pointer;
+}
+
+.error {
+	text-align: center;
+	color: red;
+}
+
+.success {
+	text-align: center;
+	color: green;
+}
+
+.high {
+	background-color: #ff0;
+}
+
+table {
+	font: 15px/1.5 Verdana, sans-serif;
+}
