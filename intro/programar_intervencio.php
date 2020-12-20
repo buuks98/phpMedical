@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $sentenciaCodiIntervencio = "SELECT codi from intervencions where codi like 'M%' order by codi desc"; //posem codi amb m pk es el que em surt de la polla
     $comandaCodiIntervencio = oci_parse($conn,$sentenciaCodiIntervencio);
     oci_execute($comandaCodiIntervencio);
+
     $fila = oci_fetch_array($comandaCodiIntervencio);
     $codi = intval(substr($fila['0'], 1, 3)) + 1;
     $finalCodi = "M".str_pad($codi, 3, "0", STR_PAD_LEFT);
@@ -37,14 +38,22 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     oci_bind_by_name($insertIntervencioComanda, ":responsable", $personal);
     oci_bind_by_name($insertIntervencioComanda, ":visitaDecisio", $visita);
     oci_bind_by_name($insertIntervencioComanda, ":pacient", $pacient);
-    $protesi = "M62437"; //no la deixem en blan pk es fk
+    $protesi = "M62437"; //no la deixem en blanc pk es fk
     oci_bind_by_name($insertIntervencioComanda, ":protesi", $protesi);
     oci_bind_by_name($insertIntervencioComanda, ":acompanyant", $acompanyant);
     oci_bind_by_name($insertIntervencioComanda, ":data", $_POST['data']);
     $exit = oci_execute($insertIntervencioComanda);
 
+    $insertProfessionalIntervencio = "INSERT INTO professionalsintervencio (personal, intervencio) VALUES (:personal, :intervencio)";
+    $comandaProfessionalIntervencio = oci_parse($conn,$insertProfessionalIntervencio);
+    oci_bind_by_name($comandaProfessionalIntervencio, ":personal", $personal);
+    oci_bind_by_name($comandaProfessionalIntervencio, ":intervencio", $finalCodi);
+    $exit1 = oci_execute($comandaProfessionalIntervencio);
+
     if(!$exit){
         $msg = "No s'ha pogut guardar correctament la intervenció";
+    } else if(!$exit1){
+        $msg = "No s'ha pogut guardar correctament el professional intervencio";
     } else {
         if(!empty($_POST["pacient"])){
             $msg = "<p>Nova intervenció " . $finalCodi . " inserida</p>\n";
