@@ -38,6 +38,9 @@ check_login();
                     <a href="programar_visita.php" class="menu">Programar una visita</a>
                 </li>
                 <li>
+                    <a href="consulta_visites.php" class="menu">Consulta visites</a>
+                </li>
+                <li>
                     <a href="programar_intervencio.php" class="menu">Programar una intervenció d'un pacient</a>
                 </li>
                 <li>
