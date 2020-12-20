@@ -116,8 +116,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                         <input type="text" name="poblacio" />
                     </div>
                     <div class="espai-dades">
-                        <label for="correu">Email</label>
-                        <input type="text" name="correu" />
+                        <label for="email">Email</label>
+                        <input type="text" name="email" />
                     </div>
                     <div class="espai-dades">
                         <label for="telefon">Telèfon</label>
@@ -143,7 +143,6 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                     <div class="center">
                         <input type="submit" class="center-block botright" value="Guardar"/>
                     </div>
-
                 </form>
             </div>
         </div>
