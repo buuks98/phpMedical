@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){ // Comprovem si es una solicitud POS
                         $comanda = oci_parse($conn, $tipologies);
                         oci_execute($comanda);
                         while (($fila = oci_fetch_array($comanda)) != false) {
-                            echo "<option value=\"" . $fila['0'] . "\">" . strtoupper($fila['1']) . "</option>\n";
+                            echo "<option "  . ($fila['0'] == $_POST["tipologia"] ? "selected='selected'" : "") . "value=\"" . $fila['0'] . "\">" . strtoupper($fila['1']) . "</option>\n";
                         }
                         ?>
                         <option value="TOTS">TOTS</option>
